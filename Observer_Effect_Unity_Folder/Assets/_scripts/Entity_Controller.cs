@@ -27,7 +27,8 @@ public class Entity_Controller : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+	void FixedUpdate () {
+		visible = renderer.isVisible;
 		if (visible) {
 			Move ();
 		}
@@ -56,6 +57,8 @@ public class Entity_Controller : MonoBehaviour {
 	}
 
 	void Oscillate (){
+		Transform focal_point = transform.Find ("Focal_Point");
+		//focal_point.transform = new Vector3.zero;
 
 	}
 }

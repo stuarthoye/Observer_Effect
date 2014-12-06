@@ -36,17 +36,17 @@ public class Player_Controller : MonoBehaviour {
 		body_rotation *= sensitivity;
 		head_rotation *= sensitivity;
 
+		transform.Rotate( body_rotation, Space.Self );
+		head.Rotate (head_rotation, Space.Self);
+
 		// Calculate keyboard movement
 		float move_orth = Input.GetAxis ("Horizontal");
 		float move_front = Input.GetAxis ("Vertical");
 		move_direction = new Vector3 (move_orth, 0, move_front);
+
 		move_direction = transform.TransformDirection(move_direction);
 		move_direction *= speed;
 		move_direction.y = 0;
-
-		// Enact movement & rotation
-		transform.Rotate( body_rotation, Space.Self );
-		head.Rotate (head_rotation, Space.Self);
 
 			
 		controller.Move (move_direction);
