@@ -4,7 +4,6 @@ using System.Collections;
 public class Player_Controller : MonoBehaviour {
 	public float speed = 6.0f;
 	public float sensitivity = 15.0f; // be nice to tie this to a sensitivity setting
-	public bool game_over;
 
 	private Vector3 move_direction = Vector3.zero;
 	private Vector3 rotation = Vector3.zero;
@@ -12,8 +11,6 @@ public class Player_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		game_over = false;
-
 	}
 
 	void Update () {
@@ -53,8 +50,6 @@ public class Player_Controller : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Objective") {
-			game_over = true;
-		}
+
 	}
 }
