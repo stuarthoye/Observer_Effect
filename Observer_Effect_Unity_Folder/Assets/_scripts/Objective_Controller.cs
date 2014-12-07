@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Objective_Controller : MonoBehaviour {
 	public bool game_over;
+	public Color objective_color = Color.red;
+
     private Collider collider;
     
     void Start () {
 		game_over = false;
-		transform.parent.renderer.material.color = Color.red;
+		transform.parent.renderer.material.color = objective_color;
 	}
     
 	void Update() {
