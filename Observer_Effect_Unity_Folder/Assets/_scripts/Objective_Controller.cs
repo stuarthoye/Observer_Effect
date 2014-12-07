@@ -2,37 +2,23 @@
 using System.Collections;
 
 public class Objective_Controller : MonoBehaviour {
-
-    public GameObject desired_particle;
+	public bool game_over;
     private Collider collider;
-    //public bool visible;
-
-   
     
     void Start () {
-        collider = desired_particle.collider;
-		//visible = true;
-	}
-
-	
-
-    void Update () {
-        
-        
-        // Test whether player can see this.
-		// Or if visibility is set by ray-cast, then automatically disable it?
-		// Toggle all activity if not visible.
-
-		/* 	if (visible) {
-		 * 		code
-		 * 		code
-		 * 		code
-		 * 		visible = false;  (raycast from player will toggle this back)
-		 * 	}
-		 */
+		game_over = false;
+		transform.parent.renderer.material.color = Color.red;
 	}
     
-    void OnTriggerEnter (Collider desired_particle) {
-        Debug.Log("You are winnner!!!");  
+	void Update() {
+		if (game_over){
+			print ("You are a winner!!!");
+		}
+	}
+
+    void OnTriggerEnter (Collider other) {
+		if (transform.parent.renderer.material.color == other.renderer.material.color) {
+			game_over = true;	
+		}
     }
 }
