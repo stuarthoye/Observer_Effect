@@ -23,4 +23,11 @@ public class Blue_Particle : MonoBehaviour {
 		Transform focal_point = transform.Find ("Focal_Point");
 		transform.RotateAround (focal_point.position, Vector3.up, rotation_amt * speed * Time.deltaTime);
 	}
+
+	void OnCollisionEnter(Collision collision) {
+		Collider other = collision.collider;
+		if (gameObject.renderer.material.color == other.renderer.material.color) {
+			print (other.renderer.material.color);
+		}
+	}
 }

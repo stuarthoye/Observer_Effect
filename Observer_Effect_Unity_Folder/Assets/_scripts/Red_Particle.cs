@@ -25,10 +25,14 @@ public class Red_Particle : MonoBehaviour {
 	}
 
 	void Oscillate (){
+		/*
 		Transform focal_point = transform.Find ("Focal_Point");
 		//float sin = Mathf.Sin(time);
 		//sin = Mathf.Abs(sin);
 		transform.position = Vector3.Lerp (start.transform.position, end.transform.forward, 0.0f * Time.deltaTime);
+		*/
+
+		Vector3 objective = transform.forward;
 	}
 		
 }

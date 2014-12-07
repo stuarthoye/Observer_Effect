@@ -44,8 +44,7 @@ public class Player_Controller : MonoBehaviour {
 		move_direction = transform.TransformDirection(move_direction);
 		move_direction *= speed;
 		move_direction.y = 0;
-
-			
+	
 		controller.Move (move_direction);
 	}
 
