@@ -4,6 +4,7 @@ using System.Collections;
 public class Red_Particle : MonoBehaviour {
 	public float distance;
 	public bool visible;
+	public Color particle_color = Color.red;
 
 	private Vector3 start;
 	private Vector3 current;
@@ -11,7 +12,7 @@ public class Red_Particle : MonoBehaviour {
 	private float scalar;
 
 	void Start () {
-		gameObject.renderer.material.color = Color.red;
+		gameObject.renderer.material.color = particle_color;
 		start = GameObject.Find ("Right_End").transform.position;
 		current = transform.position = start;
 		end = GameObject.Find("Left_End").transform.position;

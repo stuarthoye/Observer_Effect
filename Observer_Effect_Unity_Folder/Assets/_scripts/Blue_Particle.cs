@@ -6,10 +6,11 @@ public class Blue_Particle : MonoBehaviour {
 	public float distance;
 	public float rotation_amt = 20;
 	public float speed = 10;
+	public Color particle_color = Color.blue;
 
 	// Use this for initialization
 	void Start () {
-		gameObject.renderer.material.color = Color.blue;
+		gameObject.renderer.material.color = particle_color;
 	}
 
 	void FixedUpdate () {
