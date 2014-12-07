@@ -5,7 +5,7 @@ public class Player_Controller : MonoBehaviour {
 	public float speed = 6.0f;
 	public float sensitivity = 15.0f; // be nice to tie this to a sensitivity setting
 
-	private Vector3 move_direction = Vector3.zero;
+	//private Vector3 move_direction = Vector3.zero;
 	private Vector3 rotation = Vector3.zero;
 
 
@@ -14,7 +14,19 @@ public class Player_Controller : MonoBehaviour {
 	}
 
 	void Update () {
-		CharacterController controller = GetComponent<CharacterController>();
+
+        rotation.x += Input.GetAxis("Mouse X") * sensitivity;
+        rotation.y += Input.GetAxis("Mouse Y") * sensitivity;
+        rotation.y = Mathf.Clamp(rotation.y, -90, 90);
+
+        transform.localRotation = Quaternion.AngleAxis(rotation.x, Vector3.up);
+        transform.localRotation *= Quaternion.AngleAxis(rotation.y, Vector3.left);
+
+        transform.position += transform.forward * speed * Input.GetAxis("Vertical");
+        transform.position += transform.right * speed * Input.GetAxis("Horizontal");
+        
+        /*
+        CharacterController controller = GetComponent<CharacterController>();
 		Camera camera = GetComponent<Camera> ();
 		Transform head = transform.Find ("Head");
 
@@ -46,6 +58,7 @@ public class Player_Controller : MonoBehaviour {
 		move_direction.y = 0;
 	
 		controller.Move (move_direction);
+        */
 	}
 
 	void OnTriggerEnter(Collider other) {
