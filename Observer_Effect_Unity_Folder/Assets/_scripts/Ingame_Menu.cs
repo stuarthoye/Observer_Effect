@@ -41,11 +41,11 @@ public class Ingame_Menu : MonoBehaviour
 
     public void Restart()
     {
-
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public void Quit()
     {
-
+        Application.Quit();
     }
 }
