@@ -49,6 +49,7 @@
      <Compile Include="Assets\Particle_Spawn_Controller.cs" />
      <Compile Include="Assets\_scripts\Blue_Particle.cs" />
      <Compile Include="Assets\_scripts\Entity_Controller.cs" />
+     <Compile Include="Assets\_scripts\Ingame_Menu.cs" />
      <Compile Include="Assets\_scripts\Objective_Controller.cs" />
      <Compile Include="Assets\_scripts\Player_Controller.cs" />
      <Compile Include="Assets\_scripts\Red_Particle.cs" />
