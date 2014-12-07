@@ -2,38 +2,38 @@
 using System.Collections;
 
 public class Red_Particle : MonoBehaviour {
-	public Transform start;
-	public Transform end;
+	public float distance;
+	public bool visible;
 
-	private float time;
+	private Vector3 start;
+	private Vector3 current;
+	private Vector3 end;
+	private float scalar;
 
-	// Use this for initialization
 	void Start () {
 		gameObject.renderer.material.color = Color.red;
-		time = Time.time;
-		start = gameObject.transform;
-		end = transform.Find ("Focal_Point").transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		time += Time.deltaTime;
+		start = GameObject.Find ("Right_End").transform.position;
+		current = transform.position = start;
+		end = GameObject.Find("Left_End").transform.position;
+		scalar = 0;
 	}
 
 	void FixedUpdate(){
-		Oscillate ();
+		visible = renderer.isVisible;
+		if (visible) {
+			Oscillate ();
+		}
 	}
 
 	void Oscillate (){
-		/*
-		Transform focal_point = transform.Find ("Focal_Point");
-		//float sin = Mathf.Sin(time);
-		//sin = Mathf.Abs(sin);
-		transform.position = Vector3.Lerp (start.transform.position, end.transform.forward, 0.0f * Time.deltaTime);
-		*/
-
-		Vector3 objective = transform.forward;
+		scalar += Time.deltaTime;
+		transform.position = Vector3.Lerp (start, end, scalar);
+		if (transform.position == end) {
+			Vector3 temp = start;
+			start = end;
+			end = temp;
+			scalar = 0;
+		}
 	}
-		
 }
 

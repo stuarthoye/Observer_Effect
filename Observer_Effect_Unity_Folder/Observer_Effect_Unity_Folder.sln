@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B5068BDA-D434-3C13-9343-7096350F0F59}"
+# Visual Studio 2008
+
+Project("{40690589-1878-CA0B-71C6-01CADC240104}") = "Observer_Effect_Unity_Folder", "Assembly-CSharp.csproj", "{B5068BDA-D434-3C13-9343-7096350F0F59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,7 +14,10 @@ Global
 		{B5068BDA-D434-3C13-9343-7096350F0F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5068BDA-D434-3C13-9343-7096350F0F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -39,7 +42,5 @@ Global
 		$4.DirectoryNamespaceAssociation = None
 		$4.ResourceNamePolicy = FileFormatDefault
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
+
 EndGlobal
