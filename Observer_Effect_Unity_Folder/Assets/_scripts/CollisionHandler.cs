@@ -22,7 +22,7 @@ public class CollisionHandler : MonoBehaviour {
         //Debug.Log("touch");
         if (other.gameObject.name == collides_with.name)
         {
-            Instantiate(spawns);
+            Instantiate(spawns, other.transform.position, Quaternion.identity);
             Destroy (other.gameObject);
             Destroy(this.gameObject);
         }

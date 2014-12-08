@@ -13,8 +13,8 @@ public class Purple_Particle : MonoBehaviour {
 
 	void Start () {
 		gameObject.renderer.material.color = particle_color;
-		start = transform.position - new Vector3(0, distance, 0);
-		end = transform.position + new Vector3(0, distance, 0);
+		start = transform.position;
+		end = transform.position + new Vector3(0, (distance * 2), 0);
 		scalar = 0;
 	}
 

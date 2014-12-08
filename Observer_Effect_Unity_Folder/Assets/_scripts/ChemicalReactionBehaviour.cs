@@ -22,6 +22,6 @@ public class ChemicalReactionBehaviour : MonoBehaviour {
 
     void SpawnParticle()
     {
-        Instantiate(thing_to_spawn);
+        Instantiate(thing_to_spawn, transform.position, Quaternion.identity);
     }
 }
