@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_scripts\Red_Particle.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_scripts\ChemicalReactionBehaviour.cs">
     <Files>
-      <File FileName="Assets\_scripts\Blue_Particle.cs" Line="14" Column="16" />
-      <File FileName="Assets\Purple_Particle.cs" Line="15" Column="16" />
-      <File FileName="Assets\_scripts\Objective_Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\Ingame_Menu.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\Red_Particle.cs" Line="15" Column="16" />
-      <File FileName="Assets\_scripts\Player_Controller.cs" Line="1" Column="1" />
+      <File FileName="Assets\_scripts\Blue_Particle.cs" Line="13" Column="17" />
+      <File FileName="Assets\_scripts\ChemicalReactionBehaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
