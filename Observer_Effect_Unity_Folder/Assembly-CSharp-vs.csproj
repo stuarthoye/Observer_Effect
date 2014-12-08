@@ -54,6 +54,7 @@
      <Compile Include="Assets\_scripts\Objective_Controller.cs" />
      <Compile Include="Assets\_scripts\Player_Controller.cs" />
      <Compile Include="Assets\_scripts\Red_Particle.cs" />
+     <Compile Include="Assets\_scripts\Title_Screen_Behaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
