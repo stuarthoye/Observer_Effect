@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/*
 public class Entity_Controller : MonoBehaviour {
 	public bool visible;
 	public float distance;
@@ -53,11 +53,18 @@ public class Entity_Controller : MonoBehaviour {
 
 	void Rotate () {
 		Transform focal_point = transform.Find ("Focal_Point");
-		transform.RotateAround (focal_point.position, Vector3.up, rotation_amt * Time.deltaTime);
+		transform.RotateAround (focal_point.position, Vector3.up, rotation_amt * speed * Time.deltaTime);
 	}
 
 	void Oscillate (){
-		Transform focal_point = transform.Find ("Focal_Point");
-		//focal_point.transform = new Vector3.zero;
+		scalar += Time.deltaTime;
+		transform.position = Vector3.Lerp (start, end, scalar);
+		if (transform.position == end) {
+			Vector3 temp = start;
+			start = end;
+			end = temp;
+			scalar = 0;
+		}
 	}
 }
+*/

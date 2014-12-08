@@ -11,6 +11,7 @@ public class Player_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	}
 
 	void Update () {

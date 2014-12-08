@@ -9,7 +9,7 @@ public class Ingame_Menu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Ingame_Menu : MonoBehaviour
             pausemenu.gameObject.SetActive(true);
             this.gameObject.GetComponent<Player_Controller>().enabled = false;
         }*/
-        
+
         if (Input.GetButtonDown("Menu"))
         {
             pausemenu.gameObject.SetActive(true);

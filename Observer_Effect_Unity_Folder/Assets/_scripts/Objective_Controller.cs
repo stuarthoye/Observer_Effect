@@ -14,7 +14,7 @@ public class Objective_Controller : MonoBehaviour {
     
 	void Update() {
 		if (game_over){
-			print ("You are a winner!!!");
+			//print ("You are a winner!!!");
             //Application.LoadLevel(Application.loadedLevel + 1);
 		}
 	}
