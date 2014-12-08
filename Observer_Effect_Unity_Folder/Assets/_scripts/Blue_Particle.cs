@@ -15,9 +15,10 @@ public class Blue_Particle : MonoBehaviour {
 
 	void FixedUpdate () {
 		visible = renderer.isVisible;
-		if (visible) {
-			Move ();
-		}
+        if (visible)
+        {
+            Move();
+        }
 	}
 
 	void Move(){
@@ -31,4 +32,15 @@ public class Blue_Particle : MonoBehaviour {
 			print (other.renderer.material.color);
 		}
 	}
+
+    //audio triggering
+    void OnBecameVisible()
+    {
+        audio.Play();
+    }
+
+    void OnBecameInvisible()
+    {
+        audio.Pause();
+    }
 }

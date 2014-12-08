@@ -19,12 +19,14 @@ public class Red_Particle : MonoBehaviour {
 		scalar = 0;
 	}
 
-	void FixedUpdate(){
-		visible = renderer.isVisible;
-		if (visible) {
-			Oscillate ();
-		}
-	}
+    void FixedUpdate()
+    {
+        visible = renderer.isVisible;
+        if (visible)
+        {
+            Oscillate();
+        }
+    }
 
 	void Oscillate (){
 		scalar += Time.deltaTime;
@@ -36,5 +38,16 @@ public class Red_Particle : MonoBehaviour {
 			scalar = 0;
 		}
 	}
+
+    //audio triggering
+    void OnBecameVisible()
+    {
+        audio.Play();
+    }
+
+    void OnBecameInvisible()
+    {
+        audio.Pause();
+    }
 }
 
