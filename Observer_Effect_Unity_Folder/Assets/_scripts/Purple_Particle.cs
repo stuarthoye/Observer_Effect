@@ -5,6 +5,9 @@ public class Purple_Particle : MonoBehaviour {
 	public float distance = 3;
 	public bool visible;
 	public Color particle_color = Color.magenta;
+    public float decay_time;
+    private float countdown;
+    public GameObject decays_into;
 
 	private Vector3 start;
 	private Vector3 current;
@@ -16,6 +19,7 @@ public class Purple_Particle : MonoBehaviour {
 		start = transform.position;
 		end = transform.position + new Vector3(0, (distance * 2), 0);
 		scalar = 0;
+        countdown = decay_time;
 	}
 
 	void FixedUpdate()
@@ -23,8 +27,15 @@ public class Purple_Particle : MonoBehaviour {
 		visible = renderer.isVisible;
 		if (visible)
 		{
-			Oscillate();
+            countdown -= Time.deltaTime;
+            Oscillate();
 		}
+        if (countdown<=0f)
+        {
+            Instantiate(decays_into, this.transform.position, Quaternion.identity);
+            countdown = decay_time;
+            Destroy(this.gameObject);
+        }
 	}
 
 	void Oscillate (){
