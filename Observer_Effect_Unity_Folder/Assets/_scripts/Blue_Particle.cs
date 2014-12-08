@@ -11,7 +11,6 @@ public class Blue_Particle : MonoBehaviour {
 	private Vector3 focal_point;
 	// Use this for initialization
 	void Start () {
-		distance = 3;
 		gameObject.renderer.material.color = particle_color;
 		focal_point = transform.position + new Vector3 (distance, 0, 0);
 	}

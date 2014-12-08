@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Purple_Particle : MonoBehaviour {
-	public float distance;
+	public float distance = 3;
 	public bool visible;
 	public Color particle_color = Color.magenta;
 
@@ -12,10 +12,8 @@ public class Purple_Particle : MonoBehaviour {
 	private float scalar;
 
 	void Start () {
-		distance = 3;
 		gameObject.renderer.material.color = particle_color;
 		start = transform.position - new Vector3(0, distance, 0);
-		current = transform.position = start;
 		end = transform.position + new Vector3(0, distance, 0);
 		scalar = 0;
 	}

@@ -2,20 +2,17 @@
 using System.Collections;
 
 public class Red_Particle : MonoBehaviour {
-	public float distance;
+	public float distance = 3;
 	public bool visible;
 	public Color particle_color = Color.red;
 
 	private Vector3 start;
-	private Vector3 current;
 	private Vector3 end;
 	private float scalar;
 
 	void Start () {
-		distance = 3;
 		gameObject.renderer.material.color = particle_color;
 		start = transform.position - new Vector3 (distance, 0, 0);
-		current = transform.position = start;
 		end = transform.position + new Vector3 (distance, 0 , 0);
 		scalar = 0;
 	}
