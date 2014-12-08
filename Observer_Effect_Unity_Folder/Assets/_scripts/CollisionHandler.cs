@@ -24,7 +24,7 @@ public class CollisionHandler : MonoBehaviour {
         {
             Instantiate(spawns);
             Destroy (other.gameObject);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
