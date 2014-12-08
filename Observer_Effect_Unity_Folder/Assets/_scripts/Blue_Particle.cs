@@ -3,27 +3,29 @@ using System.Collections;
 
 public class Blue_Particle : MonoBehaviour {
 	public bool visible;
-	public float distance;
+	public float distance = 3;
 	public float rotation_amt = 20;
 	public float speed = 10;
 	public Color particle_color = Color.blue;
 
+	private Vector3 focal_point;
 	// Use this for initialization
 	void Start () {
+		distance = 3;
 		gameObject.renderer.material.color = particle_color;
+		focal_point = transform.position + new Vector3 (distance, 0, 0);
 	}
 
 	void FixedUpdate () {
 		visible = renderer.isVisible;
         if (visible)
         {
-            Move();
+            Rotate();
         }
 	}
 
-	void Move(){
-		Transform focal_point = transform.Find ("Focal_Point");
-		transform.RotateAround (focal_point.position, Vector3.up, rotation_amt * speed * Time.deltaTime);
+	void Rotate(){
+		transform.RotateAround (focal_point, Vector3.up, rotation_amt * speed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision) {

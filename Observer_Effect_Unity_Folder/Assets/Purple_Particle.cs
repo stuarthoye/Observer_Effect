@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Red_Particle : MonoBehaviour {
+public class Purple_Particle : MonoBehaviour {
 	public float distance;
 	public bool visible;
-	public Color particle_color = Color.red;
+	public Color particle_color = Color.magenta;
 
 	private Vector3 start;
 	private Vector3 current;
@@ -14,20 +14,20 @@ public class Red_Particle : MonoBehaviour {
 	void Start () {
 		distance = 3;
 		gameObject.renderer.material.color = particle_color;
-		start = transform.position - new Vector3 (distance, 0, 0);
+		start = transform.position - new Vector3(0, distance, 0);
 		current = transform.position = start;
-		end = transform.position + new Vector3 (distance, 0 , 0);
+		end = transform.position + new Vector3(0, distance, 0);
 		scalar = 0;
 	}
 
-    void FixedUpdate()
-    {
-        visible = renderer.isVisible;
-        if (visible)
-        {
-            Oscillate();
-        }
-    }
+	void FixedUpdate()
+	{
+		visible = renderer.isVisible;
+		if (visible)
+		{
+			Oscillate();
+		}
+	}
 
 	void Oscillate (){
 		scalar += Time.deltaTime;
@@ -40,15 +40,15 @@ public class Red_Particle : MonoBehaviour {
 		}
 	}
 
-    //audio triggering
-    void OnBecameVisible()
-    {
-        audio.Play();
-    }
+	//audio triggering
+void OnBecameVisible()
+	{
+		audio.Play();
+	}
 
-    void OnBecameInvisible()
-    {
-        audio.Pause();
-    }
+	void OnBecameInvisible()
+	{
+		audio.Pause();
+	}
 }
 
