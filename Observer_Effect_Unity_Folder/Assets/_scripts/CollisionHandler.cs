@@ -20,7 +20,7 @@ public class CollisionHandler : MonoBehaviour {
     void OnTriggerEnter (Collider other)
     {
         Debug.Log("touch");
-        if (other == collides_with.collider)
+        if (other.gameObject.name == collides_with.name)
         {
             Instantiate(spawns);
             Destroy (other.gameObject);
