@@ -21,7 +21,8 @@ public class Objective_Controller : MonoBehaviour {
 
     void OnTriggerEnter (Collider other) {
 		if (transform.parent.renderer.material.color == other.renderer.material.color) {
-			game_over = true;	
+            audio.Play();
+            game_over = true;	
 		}
     }
 }
