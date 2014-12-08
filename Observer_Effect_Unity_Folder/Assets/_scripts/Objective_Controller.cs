@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Objective_Controller : MonoBehaviour {
 	public bool game_over;
-	public Color objective_color = Color.red;
+    public GameObject objective_particle;
 
     private Collider collider;
     
     void Start () {
 		game_over = false;
-		transform.parent.renderer.material.color = objective_color;
+		transform.parent.renderer.material.color = objective_particle.renderer.material.color;
 	}
     
 	void Update() {
@@ -20,7 +20,7 @@ public class Objective_Controller : MonoBehaviour {
 	}
 
     void OnTriggerEnter (Collider other) {
-		if (transform.parent.renderer.material.color == other.renderer.material.color) {
+		if (objective_particle.tag == other.tag) {
             audio.Play();
             game_over = true;	
 		}
