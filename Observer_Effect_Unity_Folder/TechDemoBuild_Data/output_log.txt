@@ -12,7 +12,7 @@ Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effec
 Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  1.256 seconds
+- Completed reload, in  0.195 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -22,11 +22,11 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1788)
 
-UnloadTime: 10.839153 ms
+UnloadTime: 10.833450 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 2.507658 ms (FindLiveObjects: 0.038202 ms CreateObjectMapping: 0.029079 ms MarkObjects: 0.436759 ms  DeleteObjects: 0.148817 ms)
+Total: 2.728319 ms (FindLiveObjects: 0.037631 ms CreateObjectMapping: 0.029079 ms MarkObjects: 0.538821 ms  DeleteObjects: 0.137413 ms)
 
 Default clip could not be found in attached animations list.
  
@@ -62,11 +62,11 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1788)
 
-UnloadTime: 1.834844 ms
+UnloadTime: 2.091996 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 2.587484 ms (FindLiveObjects: 0.047325 ms CreateObjectMapping: 0.030789 ms MarkObjects: 0.454434 ms  DeleteObjects: 0.149387 ms)
+Total: 2.560685 ms (FindLiveObjects: 0.047895 ms CreateObjectMapping: 0.037631 ms MarkObjects: 0.480663 ms  DeleteObjects: 0.154519 ms)
 
 Default clip could not be found in attached animations list.
  
@@ -78,29 +78,4 @@ ArgumentException: The prefab you want to instantiate is null.
   at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 395)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 395)
-
-ArgumentException: The prefab you want to instantiate is null.
-  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
-  at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Default clip could not be found in attached animations list.
- 
-(Filename:  Line: 395)
-
-UnloadTime: 1.561727 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 95 unused Assets to reduce memory usage. Loaded Objects now: 145.
-Total: 28.852333 ms (FindLiveObjects: 0.036491 ms CreateObjectMapping: 0.026798 ms MarkObjects: 0.286801 ms  DeleteObjects: 7.856533 ms)
 
