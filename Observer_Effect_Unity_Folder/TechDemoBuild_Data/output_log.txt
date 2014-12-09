@@ -1,0 +1,106 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     32 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.792 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1788)
+
+UnloadTime: 12.460178 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 2.703231 ms (FindLiveObjects: 0.037631 ms CreateObjectMapping: 0.031359 ms MarkObjects: 0.452154 ms  DeleteObjects: 0.143685 ms)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1788)
+
+UnloadTime: 1.714536 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 2.581212 ms (FindLiveObjects: 0.050175 ms CreateObjectMapping: 0.030789 ms MarkObjects: 0.458996 ms  DeleteObjects: 0.152238 ms)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at ChemicalReactionBehaviour.SpawnParticle () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+UnloadTime: 1.597078 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 95 unused Assets to reduce memory usage. Loaded Objects now: 149.
+Total: 10.744503 ms (FindLiveObjects: 0.035921 ms CreateObjectMapping: 0.027938 ms MarkObjects: 0.331275 ms  DeleteObjects: 7.505871 ms)
+

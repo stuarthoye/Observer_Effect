@@ -9,13 +9,14 @@ public class Objective_Controller : MonoBehaviour {
     
     void Start () {
 		game_over = false;
-		transform.parent.renderer.material.color = objective_particle.renderer.material.color;
+        //does not work since colors are determined on Start()
+        //transform.parent.renderer.material.color = objective_particle.renderer.material.color;
 	}
     
 	void Update() {
 		if (game_over){
 			//print ("You are a winner!!!");
-            //Application.LoadLevel(Application.loadedLevel + 1);
+            Application.LoadLevel(Application.loadedLevel + 1);
 		}
 	}
 
