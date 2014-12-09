@@ -12,7 +12,7 @@ Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effec
 Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Nick\Documents\GitHub\Observer_Effect\Observer_Effect_Unity_Folder\TechDemoBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.792 seconds
+- Completed reload, in  1.256 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -22,11 +22,11 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1788)
 
-UnloadTime: 12.460178 ms
+UnloadTime: 10.839153 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 2.703231 ms (FindLiveObjects: 0.037631 ms CreateObjectMapping: 0.031359 ms MarkObjects: 0.452154 ms  DeleteObjects: 0.143685 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 2.507658 ms (FindLiveObjects: 0.038202 ms CreateObjectMapping: 0.029079 ms MarkObjects: 0.436759 ms  DeleteObjects: 0.148817 ms)
 
 Default clip could not be found in attached animations list.
  
@@ -62,11 +62,11 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1788)
 
-UnloadTime: 1.714536 ms
+UnloadTime: 1.834844 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 2.581212 ms (FindLiveObjects: 0.050175 ms CreateObjectMapping: 0.030789 ms MarkObjects: 0.458996 ms  DeleteObjects: 0.152238 ms)
+Total: 2.587484 ms (FindLiveObjects: 0.047325 ms CreateObjectMapping: 0.030789 ms MarkObjects: 0.454434 ms  DeleteObjects: 0.149387 ms)
 
 Default clip could not be found in attached animations list.
  
@@ -98,9 +98,9 @@ Default clip could not be found in attached animations list.
  
 (Filename:  Line: 395)
 
-UnloadTime: 1.597078 ms
+UnloadTime: 1.561727 ms
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 95 unused Assets to reduce memory usage. Loaded Objects now: 149.
-Total: 10.744503 ms (FindLiveObjects: 0.035921 ms CreateObjectMapping: 0.027938 ms MarkObjects: 0.331275 ms  DeleteObjects: 7.505871 ms)
+Unloading 95 unused Assets to reduce memory usage. Loaded Objects now: 145.
+Total: 28.852333 ms (FindLiveObjects: 0.036491 ms CreateObjectMapping: 0.026798 ms MarkObjects: 0.286801 ms  DeleteObjects: 7.856533 ms)
 
