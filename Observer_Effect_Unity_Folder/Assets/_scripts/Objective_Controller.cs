@@ -5,7 +5,7 @@ public class Objective_Controller : MonoBehaviour {
 	public bool game_over;
     public GameObject objective_particle;
 
-    private Collider collider;
+    //private Collider collider;
     
     void Start () {
 		game_over = false;
