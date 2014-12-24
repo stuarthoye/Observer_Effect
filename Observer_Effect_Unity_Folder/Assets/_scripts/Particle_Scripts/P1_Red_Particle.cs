@@ -9,6 +9,7 @@ public class P1_Red_Particle : MonoBehaviour {
 	private Vector3 end;
 	private float scalar = 0;
 	private bool outgoing = true;
+	private int counter = 0;
 
 	void Start () {
 		// start = transform.position - new Vector3 (distance, 0, 0);
@@ -44,7 +45,13 @@ public class P1_Red_Particle : MonoBehaviour {
 	}
 
 	void Update_Targets(){
-		transform.Rotate (90, 0, 0);
+		counter++;
+		if (counter == 3){
+			counter = 0;
+			transform.Rotate(270, 180, 0);
+		} else {
+			transform.Rotate (90, 90, 0);
+		}
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
