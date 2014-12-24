@@ -11,13 +11,13 @@ public class P1_Red_Particle : MonoBehaviour {
 	private bool outgoing = true;
 	private int counter = 0;
 
+	// This sets the start & end coordinates the particle oscillates between.
 	void Start () {
-		// start = transform.position - new Vector3 (distance, 0, 0);
-		// end = transform.position + new Vector3 (distance, 0 , 0);
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
 
+	// Here, we test whether the particle is being observed.  If it is observed, we call the object's movement function.
     void FixedUpdate()
     {
         visible = renderer.isVisible;
@@ -26,24 +26,28 @@ public class P1_Red_Particle : MonoBehaviour {
         }
     }
 
+	// This function handles the linear interpolation of the particle between two points.
+	// .Lerp() takes three arguments, the first two being the start & end points.
+	// The third argument tracks the portion of the interpolation completed.
+	// When the particle returns to its start position, it rotates & updates its endpoint with Update_Targets();
 	void Oscillate (){
 		scalar += Time.deltaTime;
+
 		if (outgoing){
 			transform.position = Vector3.Lerp (start, end, scalar);
-			if (transform.position == end) {
-				outgoing = false;
-				scalar = 0;
-			}
 		} else {
 			transform.position = Vector3.Lerp (end, start, scalar);
-			if (transform.position == start) {
-				outgoing = true;
-				scalar = 0;
+		}
+		if (transform.position == end || transform.position == start){
+			outgoing = !outgoing;
+			scalar = 0;
+			if (transform.position == start){
 				Update_Targets();
 			}
 		}
 	}
 
+	// This function rotates the particle once it reaches its endpoint.
 	void Update_Targets(){
 		counter++;
 		if (counter == 3){
