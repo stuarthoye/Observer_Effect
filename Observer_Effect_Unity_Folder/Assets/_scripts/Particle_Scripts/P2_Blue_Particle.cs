@@ -10,7 +10,7 @@ public class P2_Blue_Particle : MonoBehaviour {
 	private Vector3 focal_point;
 	// Use this for initialization
 	void Start () {
-		focal_point = transform.position + new Vector3 (distance, 0, 0);
+		focal_point = (transform.forward * distance);
 	}
 
 	void FixedUpdate () {
@@ -22,7 +22,7 @@ public class P2_Blue_Particle : MonoBehaviour {
 	}
 
 	void Rotate(){
-		transform.RotateAround (focal_point, Vector3.up, rotation_amt * speed * Time.deltaTime);
+		transform.RotateAround (focal_point, transform.up, rotation_amt * speed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision) {
