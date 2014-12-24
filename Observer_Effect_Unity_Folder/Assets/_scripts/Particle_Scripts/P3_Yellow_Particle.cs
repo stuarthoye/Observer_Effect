@@ -2,10 +2,13 @@
 using System.Collections;
 
 public class P3_Yellow_Particle : MonoBehaviour {
+	public float swell_amt = 5;
+	public float period = 5;
 	public bool visible;
-	public float period = 5.0f;
-
+	//---------------------------------------
+	private float swell_process = 0;
 	private bool swelling = true;
+	//---------------------------------------
 
 	// Use this for initialization
 	void Start () {
@@ -22,18 +25,31 @@ public class P3_Yellow_Particle : MonoBehaviour {
 	}
 
 	void Swell(){
-		float scale_amt = Time.deltaTime;
+		float scale_amt = (Time.deltaTime * swell_amt);
+		swell_process += Time.deltaTime;
+
 		if (swelling) {
 			transform.localScale += new Vector3(scale_amt, scale_amt, scale_amt);
-			period -= Time.deltaTime;
 		} else {
 			transform.localScale -= new Vector3(scale_amt, scale_amt, scale_amt);
-			period += Time.deltaTime;
 		}
-		if (period < 0) {
-			swelling = false;
-		} else if (period > 5) {
-			swelling = true;
+		if (swell_process > period){
+			swelling = !swelling;
+			swell_process = 0;
 		}
+	}
+
+	// Audio & Particle System triggering.
+	void OnBecameVisible()
+	{
+		audio.Play();
+		transform.particleSystem.Play();
+	}
+	
+	void OnBecameInvisible()
+	{
+		audio.Pause();
+		transform.particleSystem.Clear();
+		transform.particleSystem.Stop();
 	}
 }

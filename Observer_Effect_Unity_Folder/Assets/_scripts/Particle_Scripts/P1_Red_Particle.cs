@@ -3,13 +3,15 @@ using System.Collections;
 
 public class P1_Red_Particle : MonoBehaviour {
 	public float distance = 5;
+	public float period = 5;
 	public bool visible;
-
+	//---------------------------------------
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
-	private bool outgoing = true;
 	private int counter = 0;
+	private bool outgoing = true;
+	//---------------------------------------
 
 	// This sets the start & end coordinates the particle oscillates between.
 	void Start () {
@@ -59,15 +61,19 @@ public class P1_Red_Particle : MonoBehaviour {
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
-    //audio triggering
+    // Audio & Particle System triggering.
     void OnBecameVisible()
     {
         audio.Play();
+		transform.particleSystem.Play();
     }
 
+	// We clear the ParticleSystem to remove the particles still in the player's view
     void OnBecameInvisible()
     {
         audio.Pause();
+		transform.particleSystem.Clear();
+		transform.particleSystem.Stop();
     }
 }
 

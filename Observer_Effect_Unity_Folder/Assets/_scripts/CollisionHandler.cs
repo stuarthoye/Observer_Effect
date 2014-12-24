@@ -20,11 +20,13 @@ public class CollisionHandler : MonoBehaviour {
     void OnTriggerEnter (Collider other)
     {
         //Debug.Log("touch");
+		/*
         if (other.gameObject.tag == collides_with.tag)
         {
             Instantiate(spawns, other.transform.position, Quaternion.identity);
             Destroy (other.gameObject);
             Destroy(this.gameObject);
         }
+        */
     }
 }

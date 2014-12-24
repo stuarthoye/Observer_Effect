@@ -3,13 +3,15 @@ using System.Collections;
 
 public class P4_Purple_Particle : MonoBehaviour {
 	public float distance = 5;
+	public float period = 5;
 	public bool visible;
-
+	//---------------------------------------
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
 	private float sine = 0;
 	private bool outgoing = true;
+	//---------------------------------------
 
 	// Initializes start & endpoints
 	// ***
@@ -53,15 +55,18 @@ public class P4_Purple_Particle : MonoBehaviour {
 		transform.position += new Vector3 (0, Mathf.Sin (sine), 0);
 	}
 
-	//audio triggering
-void OnBecameVisible()
+	// Audio & Particle System triggering.
+	void OnBecameVisible()
 	{
 		audio.Play();
+		transform.particleSystem.Play();
 	}
-
+	
 	void OnBecameInvisible()
 	{
 		audio.Pause();
+		transform.particleSystem.Clear();
+		transform.particleSystem.Stop();
 	}
 }
 

@@ -3,13 +3,16 @@ using System.Collections;
 
 public class P5_Orange_Particle : MonoBehaviour {
 	public float distance = 5;
+	public float period = 5;
+	public float swell_amt = 5;
 	public bool visible;
-	
+	//---------------------------------------
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
-	private bool outgoing = true;
 	private int counter = 0;
+	private bool outgoing = true;
+	//---------------------------------------
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +30,7 @@ public class P5_Orange_Particle : MonoBehaviour {
 
 	void Oscillate (){
 		scalar += Time.deltaTime;
-		float scale_amt = Time.deltaTime;
+		float scale_amt = swell_amt * Time.deltaTime;
 		
 		if (outgoing){
 			transform.position = Vector3.Lerp (start, end, scalar);
@@ -56,5 +59,19 @@ public class P5_Orange_Particle : MonoBehaviour {
 		}
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
+	}
+
+	// Audio & Particle System triggering.
+	void OnBecameVisible()
+	{
+		audio.Play();
+		transform.particleSystem.Play();
+	}
+	
+	void OnBecameInvisible()
+	{
+		audio.Pause();
+		transform.particleSystem.Clear();
+		transform.particleSystem.Stop();
 	}
 }
