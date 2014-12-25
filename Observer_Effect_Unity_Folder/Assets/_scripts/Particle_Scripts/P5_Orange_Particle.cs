@@ -7,6 +7,7 @@ public class P5_Orange_Particle : MonoBehaviour {
 	public float swell_amt = 5;
 	public bool visible;
 	//---------------------------------------
+	private Messenger messenger;
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
@@ -69,14 +70,8 @@ public class P5_Orange_Particle : MonoBehaviour {
 		case "Purple":
 			break;
 		default:
-			gameObject.collider.enabled = false;
-			other.collider.enabled = false;
-
-			string full_msg = this.tag + " " + other.tag;
-			gameObject.SendMessageUpwards ("Spawn", full_msg);
-
-			Destroy (other.gameObject);
-			Destroy (gameObject);
+			messenger.Set(transform, other.gameObject.transform);
+			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
 	}	

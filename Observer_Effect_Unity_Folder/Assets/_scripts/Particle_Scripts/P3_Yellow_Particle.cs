@@ -6,6 +6,7 @@ public class P3_Yellow_Particle : MonoBehaviour {
 	public float period = 5;
 	public bool visible;
 	//---------------------------------------
+	private Messenger messenger;
 	private float swell_process = 0;
 	private bool swelling = true;
 	//---------------------------------------
@@ -45,14 +46,8 @@ public class P3_Yellow_Particle : MonoBehaviour {
 		case "Blue":
 			break;
 		default:
-			gameObject.collider.enabled = false;
-			other.collider.enabled = false;
-
-			string full_msg = this.tag + " " + other.tag;
-			gameObject.SendMessageUpwards ("Spawn", full_msg);
-
-			Destroy (other.gameObject);
-			Destroy (gameObject);
+			messenger.Set(transform, other.gameObject.transform);
+			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
 	}	

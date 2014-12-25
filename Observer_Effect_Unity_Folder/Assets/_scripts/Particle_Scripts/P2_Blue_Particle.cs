@@ -8,6 +8,7 @@ public class P2_Blue_Particle : MonoBehaviour {
 	public float speed = 5;
 	public bool visible;
 	//---------------------------------------
+	private Messenger messenger;
 	private Vector3 focal_point;
 	//---------------------------------------
 
@@ -33,14 +34,8 @@ public class P2_Blue_Particle : MonoBehaviour {
 		case "Red": 
 			break;
 		default:
-			gameObject.collider.enabled = false;
-			other.collider.enabled = false;
-
-			string full_msg = this.tag + " " + other.tag;
-			gameObject.SendMessageUpwards ("Spawn", full_msg);
-
-			Destroy (other.gameObject);
-			Destroy (gameObject);
+			messenger.Set(transform, other.gameObject.transform);
+			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
 	}	
