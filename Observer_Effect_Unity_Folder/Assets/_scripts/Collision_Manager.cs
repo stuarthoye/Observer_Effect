@@ -9,30 +9,27 @@ public class Collision_Manager : MonoBehaviour {
 	public GameObject Purple;
 	public GameObject Orange;
 	public GameObject Green;
+	//---------------------------------------
+	private ArrayList particles = new ArrayList ();
+	//---------------------------------------
+
 	// Use this for initialization
 	void Start () {
-		// foreach (Transform child in transform){
-		// 	print ("HELLO WORLD");
-		// }
+		foreach (Transform child in transform){
+			particles.Add(child);
+		}
 	}
 
 	void Collide(Messenger messenger){
 		string message = messenger.first.tag + " " + messenger.second.tag;
+		GameObject new_particle;
 
 		switch (message) {
 		case "Red Blue":
-			messenger.first.collider.enabled = false;
-			messenger.second.collider.enabled = false;
-			Instantiate(Purple, messenger.first.transform.position, messenger.first.transform.rotation);
-			messenger.first.SetActive(false);
-			messenger.second.SetActive(false);
+			Create(messenger.first, messenger.second, Purple);
 			break;
 		case "Red Yellow":
-			messenger.first.collider.enabled = false;
-			messenger.second.collider.enabled = false;
-			Instantiate(Orange, messenger.first.transform.position, messenger.first.transform.rotation);
-			messenger.first.SetActive(false);
-			messenger.second.SetActive(false);
+			Create(messenger.first, messenger.second, Orange);
 			break;
 		case "Red Purple":
 			// make something pretty happen here
@@ -44,11 +41,7 @@ public class Collision_Manager : MonoBehaviour {
 			// make something pretty happen here
 			break;
 		case "Blue Yellow":
-			messenger.first.collider.enabled = false;
-			messenger.second.collider.enabled = false;
-			Instantiate(Green, messenger.first.transform.position, messenger.first.transform.rotation);
-			messenger.first.SetActive(false);
-			messenger.second.SetActive(false);
+			Create(messenger.first, messenger.second, Green);
 			break;
 		case "Blue Purple":
 			// make something pretty happen here
@@ -96,5 +89,19 @@ public class Collision_Manager : MonoBehaviour {
 			// make something pretty happen here
 			break;
 		}
+	}
+
+	void Create(GameObject parent_1, GameObject parent_2, GameObject particle_type){
+		GameObject new_particle;
+
+		parent_1.collider.enabled = false;
+		parent_2.collider.enabled = false;
+
+		new_particle = Instantiate(particle_type, parent_1.transform.position, parent_2.transform.rotation) as GameObject;
+		new_particle.transform.SetParent(parent_1.transform.parent);
+		particles.Add(new_particle);
+
+		parent_1.SetActive(false);
+		parent_2.SetActive(false);
 	}
 }
