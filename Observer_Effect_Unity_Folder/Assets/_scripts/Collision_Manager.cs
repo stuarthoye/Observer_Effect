@@ -24,15 +24,15 @@ public class Collision_Manager : MonoBehaviour {
 			messenger.first.collider.enabled = false;
 			messenger.second.collider.enabled = false;
 			Instantiate(Purple, messenger.first.transform.position, messenger.first.transform.rotation);
-			Destroy (messenger.first);
-			Destroy (messenger.second);
+			messenger.first.SetActive(false);
+			messenger.second.SetActive(false);
 			break;
 		case "Red Yellow":
 			messenger.first.collider.enabled = false;
 			messenger.second.collider.enabled = false;
 			Instantiate(Orange, messenger.first.transform.position, messenger.first.transform.rotation);
-			Destroy (messenger.first);
-			Destroy (messenger.second);
+			messenger.first.SetActive(false);
+			messenger.second.SetActive(false);
 			break;
 		case "Red Purple":
 			// make something pretty happen here
@@ -47,8 +47,8 @@ public class Collision_Manager : MonoBehaviour {
 			messenger.first.collider.enabled = false;
 			messenger.second.collider.enabled = false;
 			Instantiate(Green, messenger.first.transform.position, messenger.first.transform.rotation);
-			Destroy (messenger.first);
-			Destroy (messenger.second);
+			messenger.first.SetActive(false);
+			messenger.second.SetActive(false);
 			break;
 		case "Blue Purple":
 			// make something pretty happen here
