@@ -39,6 +39,24 @@ public class P3_Yellow_Particle : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter(Collider other){
+		switch (other.tag) {
+		case "Red":
+		case "Blue":
+			break;
+		default:
+			gameObject.collider.enabled = false;
+			other.collider.enabled = false;
+
+			string full_msg = this.tag + " " + other.tag;
+			gameObject.SendMessageUpwards ("Spawn", full_msg);
+
+			Destroy (other.gameObject);
+			Destroy (gameObject);
+			break;
+		}
+	}	
+
 	// Audio & Particle System triggering.
 	void OnBecameVisible()
 	{

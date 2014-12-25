@@ -28,14 +28,22 @@ public class P2_Blue_Particle : MonoBehaviour {
 		transform.RotateAround (focal_point, transform.up, rotation_amt * speed * Time.deltaTime);
 	}
 
-	/*
-	void OnCollisionEnter(Collision collision) {
-		Collider other = collision.collider;
-		if (gameObject.renderer.material.color == other.renderer.material.color) {
-			print (other.renderer.material.color);
+	void OnTriggerEnter(Collider other){
+		switch (other.tag) {
+		case "Red": 
+			break;
+		default:
+			gameObject.collider.enabled = false;
+			other.collider.enabled = false;
+
+			string full_msg = this.tag + " " + other.tag;
+			gameObject.SendMessageUpwards ("Spawn", full_msg);
+
+			Destroy (other.gameObject);
+			Destroy (gameObject);
+			break;
 		}
-	}
-	*/
+	}	
 
 	// Audio & Particle System triggering.
 	void OnBecameVisible()

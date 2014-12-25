@@ -55,6 +55,25 @@ public class P4_Purple_Particle : MonoBehaviour {
 		transform.position += new Vector3 (0, Mathf.Sin (sine), 0);
 	}
 
+	void OnTriggerEnter(Collider other){
+		switch (other.tag) {
+		case "Red":
+		case "Blue":
+		case "Yellow":
+			break;
+		default:
+			gameObject.collider.enabled = false;
+			other.collider.enabled = false;
+
+			string full_msg = this.tag + " " + other.tag;
+			gameObject.SendMessageUpwards ("Spawn", full_msg);
+
+			Destroy (other.gameObject);
+			Destroy (gameObject);
+			break;
+		}
+	}	
+
 	// Audio & Particle System triggering.
 	void OnBecameVisible()
 	{

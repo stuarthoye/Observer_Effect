@@ -1,11 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public struct Messenger{
+	public GameObject first;
+	public GameObject second;
+
+	public void Set(Transform self, Transform other){
+		first = self.gameObject;
+		second = other.gameObject;
+	}
+}
+
 public class P1_Red_Particle : MonoBehaviour {
 	public float distance = 5;
 	public float period = 5;
 	public bool visible;
 	//---------------------------------------
+	private Messenger messenger;
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
@@ -61,6 +72,12 @@ public class P1_Red_Particle : MonoBehaviour {
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
+
+	void OnTriggerEnter(Collider other){
+		messenger.Set(transform, other.gameObject.transform);
+		gameObject.SendMessageUpwards ("Collide", messenger);
+	}	
+
     // Audio & Particle System triggering.
     void OnBecameVisible()
     {

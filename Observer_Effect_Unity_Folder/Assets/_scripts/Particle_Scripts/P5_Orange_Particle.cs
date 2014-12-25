@@ -61,6 +61,26 @@ public class P5_Orange_Particle : MonoBehaviour {
 		start = transform.position;
 	}
 
+	void OnTriggerEnter(Collider other){
+		switch (other.tag) {
+		case "Red":
+		case "Blue":
+		case "Yellow":
+		case "Purple":
+			break;
+		default:
+			gameObject.collider.enabled = false;
+			other.collider.enabled = false;
+
+			string full_msg = this.tag + " " + other.tag;
+			gameObject.SendMessageUpwards ("Spawn", full_msg);
+
+			Destroy (other.gameObject);
+			Destroy (gameObject);
+			break;
+		}
+	}	
+
 	// Audio & Particle System triggering.
 	void OnBecameVisible()
 	{
