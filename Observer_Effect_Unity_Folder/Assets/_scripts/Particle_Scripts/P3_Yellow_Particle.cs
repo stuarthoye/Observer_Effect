@@ -1,19 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class P3_Yellow_Particle : MonoBehaviour {
-	public float swell_amt = 5;
-	public float period = 5;
-	public bool visible;
-	//---------------------------------------
-	private Messenger messenger;
+public class P3_Yellow_Particle : P0_Basic_Particle {
 	private float swell_process = 0;
 	private bool swelling = true;
 	//---------------------------------------
 
 	// Use this for initialization
 	void Start () {
-
+		swell_amt = 5;
+		period = 5;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +46,11 @@ public class P3_Yellow_Particle : MonoBehaviour {
 			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
-	}	
+	}
+
+	void OnTriggerExit(){
+		collider.enabled = true;
+	}
 
 	// Audio & Particle System triggering.
 	void OnBecameVisible()

@@ -1,22 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public struct Messenger{
-	public GameObject first;
-	public GameObject second;
-
-	public void Set(Transform self, Transform other){
-		first = self.gameObject;
-		second = other.gameObject;
-	}
-}
-
-public class P1_Red_Particle : MonoBehaviour {
-	public float distance = 5;
-	public float period = 5;
-	public bool visible;
-	//---------------------------------------
-	private Messenger messenger;
+public class P1_Red_Particle : P0_Basic_Particle {
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
@@ -26,6 +11,8 @@ public class P1_Red_Particle : MonoBehaviour {
 
 	// This sets the start & end coordinates the particle oscillates between.
 	void Start () {
+		distance = 5;
+		period = 5;
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
@@ -76,7 +63,11 @@ public class P1_Red_Particle : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		messenger.Set(transform, other.gameObject.transform);
 		gameObject.SendMessageUpwards ("Collide", messenger);
-	}	
+	}
+
+	void OnTriggerExit(){
+		collider.enabled = true;
+	}
 
     // Audio & Particle System triggering.
     void OnBecameVisible()

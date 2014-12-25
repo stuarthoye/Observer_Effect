@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class P4_Purple_Particle : MonoBehaviour {
-	public float distance = 5;
-	public float period = 5;
-	public bool visible;
+public class P4_Purple_Particle : P0_Compound_Particle {
 	//---------------------------------------
-	private Messenger messenger;
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
@@ -23,6 +19,9 @@ public class P4_Purple_Particle : MonoBehaviour {
 	// Not huge problem since lerp, but will look nicer.
 	// ***
 	void Start () {
+		distance = 5;
+		period = 5;
+		decay_timer = 3;
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
@@ -31,9 +30,14 @@ public class P4_Purple_Particle : MonoBehaviour {
 	void FixedUpdate()
 	{
 		visible = renderer.isVisible;
-		if (visible)
-		{
-            Oscillate();
+
+		if (visible) {
+			decay_timer -= Time.deltaTime;
+			if (decay_timer > 0) {
+            	Oscillate();
+			} else {
+				Decay();
+			}
 		}
 	}
 

@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class P2_Blue_Particle : MonoBehaviour {
-	public float distance = 5;
-	public float period = 5;
-	public float rotation_amt = 20;
-	public float speed = 5;
-	public bool visible;
-	//---------------------------------------
-	private Messenger messenger;
+public class P2_Blue_Particle : P0_Basic_Particle {
 	private Vector3 focal_point;
 	//---------------------------------------
 
 	// Use this for initialization
 	void Start () {
+		distance = 5;
+		period = 5;
+		speed = 5;
+		rotation_amt = 20;
 		focal_point = (transform.forward * distance);
 	}
 
@@ -38,7 +35,11 @@ public class P2_Blue_Particle : MonoBehaviour {
 			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
-	}	
+	}
+
+	void OnTriggerExit(){
+		collider.enabled = true;
+	}
 
 	// Audio & Particle System triggering.
 	void OnBecameVisible()

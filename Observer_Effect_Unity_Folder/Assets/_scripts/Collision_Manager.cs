@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public struct Messenger{
+	public GameObject first;
+	public GameObject second;
+	
+	public void Set(Transform self, Transform other){
+		first = self.gameObject;
+		second = other.gameObject;
+	}
+}
+
 public class Collision_Manager : MonoBehaviour {
 
 	public GameObject Red;
@@ -22,7 +32,6 @@ public class Collision_Manager : MonoBehaviour {
 
 	void Collide(Messenger messenger){
 		string message = messenger.first.tag + " " + messenger.second.tag;
-		GameObject new_particle;
 
 		switch (message) {
 		case "Red Blue":
@@ -99,6 +108,7 @@ public class Collision_Manager : MonoBehaviour {
 
 		new_particle = Instantiate(particle_type, parent_1.transform.position, parent_2.transform.rotation) as GameObject;
 		new_particle.transform.SetParent(parent_1.transform.parent);
+		// need to set the parent of the newly instantiated particle (the two colliding particles)
 		particles.Add(new_particle);
 
 		parent_1.SetActive(false);

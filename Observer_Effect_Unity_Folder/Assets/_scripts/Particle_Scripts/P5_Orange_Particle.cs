@@ -1,13 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class P5_Orange_Particle : MonoBehaviour {
-	public float distance = 5;
-	public float period = 5;
-	public float swell_amt = 5;
-	public bool visible;
-	//---------------------------------------
-	private Messenger messenger;
+public class P5_Orange_Particle : P0_Compound_Particle {
 	private Vector3 start;
 	private Vector3 end;
 	private float scalar = 0;
@@ -17,6 +11,9 @@ public class P5_Orange_Particle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		decay_timer = 3;
+		swell_amt = 5;
+		period = 5;
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
@@ -24,8 +21,14 @@ public class P5_Orange_Particle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		visible = renderer.isVisible;
+
 		if (visible) {
-			Oscillate();
+			decay_timer -= Time.deltaTime;
+			if (decay_timer > 0){
+				Oscillate();
+			} else {
+				Decay ();
+			}
 		}
 	}
 

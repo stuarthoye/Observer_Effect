@@ -54,6 +54,8 @@
      <Compile Include="Assets\_scripts\Generic_Particle.cs" />
      <Compile Include="Assets\_scripts\Ingame_Menu.cs" />
      <Compile Include="Assets\_scripts\Objective_Controller.cs" />
+     <Compile Include="Assets\_scripts\Particle_Scripts\P0_Basic_Particle.cs" />
+     <Compile Include="Assets\_scripts\Particle_Scripts\P0_Compound_Particle.cs" />
      <Compile Include="Assets\_scripts\Particle_Scripts\P1_Red_Particle.cs" />
      <Compile Include="Assets\_scripts\Particle_Scripts\P2_Blue_Particle.cs" />
      <Compile Include="Assets\_scripts\Particle_Scripts\P3_Yellow_Particle.cs" />

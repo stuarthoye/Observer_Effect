@@ -1,31 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class P6_Green_Particle : MonoBehaviour {
-	// Use this for initialization
-	public float distance = 5;
-	public float period = 5;
-	public float rotation_amt = 20;
-	public float speed = 5;
-	public bool visible;
-	//---------------------------------------
-	private Messenger messenger;
+public class P6_Green_Particle : P0_Compound_Particle {
 	private Vector3 focal_point;
 	//---------------------------------------
 	
 	// Use this for initialization
 	void Start () {
+		speed = 5;
+		decay_timer = 3;
+		rotation_amt = 20;
 		focal_point = (transform.forward * distance);
 	}
 	
 	void FixedUpdate () {
 		visible = renderer.isVisible;
-		if (visible)
-		{
-			Rotate();
+		if (visible) {
+			decay_timer -= Time.deltaTime;
+			if (decay_timer > 0) {
+				Rotate();
+			} else {
+				Decay ();
+			}
 		}
 	}
-	
+
 	void Rotate(){
 		transform.RotateAround (focal_point, transform.up, rotation_amt * speed * Time.deltaTime);
 	}
