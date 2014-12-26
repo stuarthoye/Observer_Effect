@@ -34,6 +34,8 @@ public class Collision_Manager : MonoBehaviour {
 		string message = messenger.first.tag + " " + messenger.second.tag;
 
 		switch (message) {
+
+		// These are the fundamental type collisions
 		case "Red Blue":
 			Create(messenger.first, messenger.second, Purple);
 			break;
@@ -43,26 +45,29 @@ public class Collision_Manager : MonoBehaviour {
 		case "Blue Yellow":
 			Create(messenger.first, messenger.second, Green);
 			break;
+
+		// These collisions are where the particle will have all 3 types
+		case "Red Green":
+			// end the world
+			break;
+		case "Blue Orange":
+			// end the world
+			break;
+		case "Yellow Purple":
+			// end the world
+			break;
+
+		// These are collisions where the particle collides with another containing it type already
 		case "Red Purple":
 			// make something pretty happen here
 			break;
 		case "Red Orange":
 			// make something pretty happen here
 			break;
-		case "Red Green":
-			// make something pretty happen here
-			break;
-
 		case "Blue Purple":
 			// make something pretty happen here
 			break;
-		case "Blue Orange":
-			// make something pretty happen here
-			break;
 		case "Blue Green":
-			// make something pretty happen here
-			break;
-		case "Yellow Purple":
 			// make something pretty happen here
 			break;
 		case "Yellow Orange":
@@ -71,15 +76,19 @@ public class Collision_Manager : MonoBehaviour {
 		case "Yellow Green":
 			// make something pretty happen here
 			break;
+
+		// These are compound types colliding with other compound types
 		case "Purple Orange":
-			// make something pretty happen here
+			// end the world?
 			break;
 		case "Purple Green":
-			// make something pretty happen here
+			// end the world?
 			break;
 		case "Orange Green":
-			// make something pretty happen here
+			// end the world?
 			break;
+
+		// These are collisions between same particles
 		case "Red Red":
 			// make something pretty happen here
 			break;
@@ -108,10 +117,10 @@ public class Collision_Manager : MonoBehaviour {
 
 		parent_1.collider.enabled = false;
 		parent_2.collider.enabled = false;
-
-		new_particle = Instantiate(particle_type, parent_1.transform.position, parent_2.transform.rotation) as GameObject;
+		
+		new_particle = Instantiate (particle_type, parent_1.transform.position, parent_2.transform.rotation) as GameObject;
 		new_particle.transform.SetParent(parent_1.transform.parent);
-		// need to set the parent of the newly instantiated particle (the two colliding particles)
+		new_particle.GetComponent<P0_Compound_Particle> ().Set_Parents (parent_1, parent_2);
 		particles.Add(new_particle);
 
 		parent_1.SetActive(false);
