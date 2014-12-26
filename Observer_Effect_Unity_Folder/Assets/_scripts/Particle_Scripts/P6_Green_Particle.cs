@@ -7,9 +7,6 @@ public class P6_Green_Particle : P0_Compound_Particle {
 	
 	// Use this for initialization
 	void Start () {
-		speed = 5;
-		decay_timer = 3;
-		rotation_amt = 20;
 		focal_point = (transform.forward * distance);
 	}
 	
@@ -43,16 +40,4 @@ public class P6_Green_Particle : P0_Compound_Particle {
 			break;
 		}
 	}	
-
-	// Audio & Particle System triggering.
-	void OnBecameVisible() {
-		audio.Play();
-		transform.particleSystem.Play();
-	}
-	
-	void OnBecameInvisible() {
-		audio.Pause();
-		transform.particleSystem.Clear();
-		transform.particleSystem.Stop();
-	}
 }

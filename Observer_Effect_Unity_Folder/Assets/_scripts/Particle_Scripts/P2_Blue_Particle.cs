@@ -7,10 +7,6 @@ public class P2_Blue_Particle : P0_Basic_Particle {
 
 	// Use this for initialization
 	void Start () {
-		distance = 5;
-		period = 5;
-		speed = 5;
-		rotation_amt = 20;
 		focal_point = (transform.forward * distance);
 	}
 
@@ -35,23 +31,5 @@ public class P2_Blue_Particle : P0_Basic_Particle {
 			gameObject.SendMessageUpwards ("Collide", messenger);
 			break;
 		}
-	}
-
-	void OnTriggerExit(){
-		collider.enabled = true;
-	}
-
-	// Audio & Particle System triggering.
-	void OnBecameVisible()
-	{
-		audio.Play();
-		transform.particleSystem.Play();
-	}
-	
-	void OnBecameInvisible()
-	{
-		audio.Pause();
-		transform.particleSystem.Clear();
-		transform.particleSystem.Stop();
 	}
 }

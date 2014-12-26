@@ -4,7 +4,7 @@ using System.Collections;
 public class P0_Compound_Particle : P0_Basic_Particle {
 	public GameObject parent_1, parent_2;
 
-	protected float decay_timer;
+	public float decay_timer = 10;
 
 	void Set_Parents(GameObject p1, GameObject p2){
 		parent_1 = p1;

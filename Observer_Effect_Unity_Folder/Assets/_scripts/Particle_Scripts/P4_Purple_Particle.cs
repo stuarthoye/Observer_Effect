@@ -19,9 +19,6 @@ public class P4_Purple_Particle : P0_Compound_Particle {
 	// Not huge problem since lerp, but will look nicer.
 	// ***
 	void Start () {
-		distance = 5;
-		period = 5;
-		decay_timer = 3;
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
@@ -72,19 +69,5 @@ public class P4_Purple_Particle : P0_Compound_Particle {
 			break;
 		}
 	}	
-
-	// Audio & Particle System triggering.
-	void OnBecameVisible()
-	{
-		audio.Play();
-		transform.particleSystem.Play();
-	}
-	
-	void OnBecameInvisible()
-	{
-		audio.Pause();
-		transform.particleSystem.Clear();
-		transform.particleSystem.Stop();
-	}
 }
 

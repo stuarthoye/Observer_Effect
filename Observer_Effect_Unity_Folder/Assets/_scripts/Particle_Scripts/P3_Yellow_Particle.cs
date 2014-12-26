@@ -8,8 +8,7 @@ public class P3_Yellow_Particle : P0_Basic_Particle {
 
 	// Use this for initialization
 	void Start () {
-		swell_amt = 5;
-		period = 5;
+
 	}
 	
 	// Update is called once per frame
@@ -50,19 +49,5 @@ public class P3_Yellow_Particle : P0_Basic_Particle {
 
 	void OnTriggerExit(){
 		collider.enabled = true;
-	}
-
-	// Audio & Particle System triggering.
-	void OnBecameVisible()
-	{
-		audio.Play();
-		transform.particleSystem.Play();
-	}
-	
-	void OnBecameInvisible()
-	{
-		audio.Pause();
-		transform.particleSystem.Clear();
-		transform.particleSystem.Stop();
 	}
 }

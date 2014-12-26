@@ -11,8 +11,6 @@ public class P1_Red_Particle : P0_Basic_Particle {
 
 	// This sets the start & end coordinates the particle oscillates between.
 	void Start () {
-		distance = 5;
-		period = 5;
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
 	}
@@ -65,23 +63,5 @@ public class P1_Red_Particle : P0_Basic_Particle {
 		gameObject.SendMessageUpwards ("Collide", messenger);
 	}
 
-	void OnTriggerExit(){
-		collider.enabled = true;
-	}
-
-    // Audio & Particle System triggering.
-    void OnBecameVisible()
-    {
-        audio.Play();
-		transform.particleSystem.Play();
-    }
-
-	// We clear the ParticleSystem to remove the particles still in the player's view
-    void OnBecameInvisible()
-    {
-        audio.Pause();
-		transform.particleSystem.Clear();
-		transform.particleSystem.Stop();
-    }
 }
 

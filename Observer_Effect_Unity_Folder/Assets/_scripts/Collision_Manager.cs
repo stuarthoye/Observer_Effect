@@ -40,6 +40,9 @@ public class Collision_Manager : MonoBehaviour {
 		case "Red Yellow":
 			Create(messenger.first, messenger.second, Orange);
 			break;
+		case "Blue Yellow":
+			Create(messenger.first, messenger.second, Green);
+			break;
 		case "Red Purple":
 			// make something pretty happen here
 			break;
@@ -49,9 +52,7 @@ public class Collision_Manager : MonoBehaviour {
 		case "Red Green":
 			// make something pretty happen here
 			break;
-		case "Blue Yellow":
-			Create(messenger.first, messenger.second, Green);
-			break;
+
 		case "Blue Purple":
 			// make something pretty happen here
 			break;
@@ -96,6 +97,8 @@ public class Collision_Manager : MonoBehaviour {
 			break;
 		case "Green Green":
 			// make something pretty happen here
+			break;
+		default:
 			break;
 		}
 	}
