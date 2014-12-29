@@ -20,8 +20,8 @@ public class P5_Orange_Particle : P0_Compound_Particle {
 		visible = renderer.isVisible;
 
 		if (visible) {
-			decay_timer -= Time.deltaTime;
-			if (decay_timer > 0){
+			actual_decay -= Time.deltaTime;
+			if (actual_decay > 0){
 				Oscillate();
 			} else {
 				Decay ();
@@ -30,7 +30,7 @@ public class P5_Orange_Particle : P0_Compound_Particle {
 	}
 
 	void Oscillate (){
-		scalar += Time.deltaTime;
+		scalar += ( (Time.deltaTime / period) * vertices );
 		float scale_amt = swell_amt * Time.deltaTime;
 		
 		if (outgoing){

@@ -3,11 +3,14 @@ using System.Collections;
 
 public class P2_Blue_Particle : P0_Basic_Particle {
 	private Vector3 focal_point;
+	private float circum;
+	private float angle;
 	//---------------------------------------
 
 	// Use this for initialization
 	void Start () {
-		focal_point = (transform.forward * distance);
+		focal_point = transform.localPosition + (transform.forward * distance);
+		speed = 360 / period;
 	}
 
 	void FixedUpdate () {
@@ -19,7 +22,8 @@ public class P2_Blue_Particle : P0_Basic_Particle {
 	}
 
 	void Rotate(){
-		transform.RotateAround (focal_point, transform.up, rotation_amt * speed * Time.deltaTime);
+		angle = speed * Time.deltaTime;
+		transform.RotateAround (focal_point, transform.up, angle);
 	}
 
 	void OnTriggerEnter(Collider other){

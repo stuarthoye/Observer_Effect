@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_scripts\Collision_Manager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_scripts\particles\P6_Green_Particle.cs">
     <Files>
-      <File FileName="Assets\_scripts\particles\P0_Basic_Particle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\particles\P2_Blue_Particle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\Collision_Manager.cs" Line="126" Column="51" />
-      <File FileName="Assets\_scripts\particles\P0_Compound_Particle.cs" Line="16" Column="3" />
-      <File FileName="Assets\_scripts\particles\P1_Red_Particle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\particles\P6_Green_Particle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\particles\P5_Orange_Particle.cs" Line="17" Column="2" />
+      <File FileName="Assets\_scripts\particles\P6_Green_Particle.cs" Line="33" Column="12" />
+      <File FileName="Assets\_scripts\Collision_Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_scripts\particles\P0_Basic_Particle.cs" Line="19" Column="69" />
+      <File FileName="Assets\_scripts\particles\P2_Blue_Particle.cs" Line="27" Column="3" />
+      <File FileName="Assets\_scripts\particles\P0_Compound_Particle.cs" Line="13" Column="2" />
+      <File FileName="Assets\_scripts\particles\P1_Red_Particle.cs" Line="31" Column="20" />
+      <File FileName="Assets\_scripts\particles\P5_Orange_Particle.cs" Line="46" Column="37" />
       <File FileName="Assets\_scripts\particles\P3_Yellow_Particle.cs" Line="1" Column="1" />
-      <File FileName="Assets\_scripts\particles\P4_Purple_Particle.cs" Line="1" Column="1" />
+      <File FileName="Assets\_scripts\particles\P4_Purple_Particle.cs" Line="24" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

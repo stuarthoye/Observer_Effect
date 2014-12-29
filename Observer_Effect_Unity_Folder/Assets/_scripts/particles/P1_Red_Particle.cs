@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class P1_Red_Particle : P0_Basic_Particle {
@@ -29,7 +29,7 @@ public class P1_Red_Particle : P0_Basic_Particle {
 	// The third argument tracks the portion of the interpolation completed.
 	// When the particle returns to its start position, it rotates & updates its endpoint with Update_Targets();
 	void Oscillate (){
-		scalar += Time.deltaTime;
+		scalar += ( (Time.deltaTime / period) * vertices );
 
 		if (outgoing){
 			transform.position = Vector3.Lerp (start, end, scalar);

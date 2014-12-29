@@ -12,7 +12,14 @@ public class P0_Basic_Particle : MonoBehaviour {
 
 	protected Messenger messenger;
 
-	
+	protected int vertices = 6;
+
+	void Start(){
+		if (transform.parent == null){
+			transform.parent = GameObject.Find("Collision_Manager").transform;
+		}
+	}
+
 	void OnTriggerExit(){
 		collider.enabled = true;
 	}

@@ -21,6 +21,7 @@ public class P4_Purple_Particle : P0_Compound_Particle {
 	void Start () {
 		end = transform.position - (transform.forward * distance);
 		start = transform.position;
+		vertices = 2;
 	}
 
 	// Test whether particle is observed & call movement function if so.
@@ -29,8 +30,8 @@ public class P4_Purple_Particle : P0_Compound_Particle {
 		visible = renderer.isVisible;
 
 		if (visible) {
-			decay_timer -= Time.deltaTime;
-			if (decay_timer > 0) {
+			actual_decay -= Time.deltaTime;
+			if (actual_decay > 0) {
             	Oscillate();
 			} else {
 				Decay();
@@ -42,8 +43,8 @@ public class P4_Purple_Particle : P0_Compound_Particle {
 	// The movement along the principle direction is handled by lerping.
 	// Orthogonal movement (sinusoidal up-down) is handled by adding the .Sin() to its transform.
 	void Oscillate (){
-		scalar += Time.deltaTime;
-		sine += (10 * Time.deltaTime);
+		scalar += (Time.deltaTime / period) * vertices;
+		sine += 360 / (distance * Time.deltaTime);
 
 		if (outgoing){
 			transform.position = Vector3.Lerp (start, end, scalar);
